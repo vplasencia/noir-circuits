@@ -1,0 +1,7 @@
+[package]
+name = "tests"
+type = "lib"
+authors = [""]
+
+[dependencies]
+binary_merkle_root = { path = "../binary_merkle_root" }
