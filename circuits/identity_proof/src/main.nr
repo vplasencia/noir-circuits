@@ -35,7 +35,7 @@ fn main(
 }
 
 #[test]
-fn generate_root_and_nullifier_correctly() {
+fn generate_commitment_correctly() {
     let secret = 1108309587400101993411102416244214863407236426086075003887302581916280632942;
     let scope = 32;
 
