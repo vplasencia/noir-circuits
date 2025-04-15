@@ -39,13 +39,13 @@ fn main(
     let identity_commitment = poseidon2([public_key.x, public_key.y]);
 
     // Calculate Merkle root.
-    let root = binary_merkle_root::binary_merkle_root(poseidon2, identity_commitment, merkle_proof_length, merkle_proof_indices, merkle_proof_siblings);
+    let merkle_root = binary_merkle_root::binary_merkle_root(poseidon2, identity_commitment, merkle_proof_length, merkle_proof_indices, merkle_proof_siblings);
 
     // Nullifier generation.
     let nullifier = poseidon2([scope, secret]);
 
     // Output the root and nullifier.
-    (root, nullifier)
+    (merkle_root, nullifier)
 }
 
 #[test]
