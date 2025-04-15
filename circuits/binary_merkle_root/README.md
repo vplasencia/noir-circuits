@@ -22,7 +22,7 @@ fn main(
     merkle_proof_length: u32, 
     merkle_proof_indices: [u1; MAX_DEPTH], 
     merkle_proof_siblings: [Field; MAX_DEPTH], 
-) -> pub (Field, Field) {
+) {
 
     // Calculate Merkle root.
     let merkle_root = binary_merkle_root::binary_merkle_root(poseidon2, identity_commitment, merkle_proof_length, merkle_proof_indices, merkle_proof_siblings);
