@@ -2,12 +2,12 @@
     "name": "noir-circuits",
     "packageManager": "yarn@4.9.1",
     "scripts": {
-        "compile": "cd ${0} && chmod u+x ../scripts/compile.sh && ../scripts/compile.sh",
-        "generate:prover": "cd ${0} && chmod u+x ../scripts/generate-prover.sh && ../scripts/generate-prover.sh",
-        "generate:witness": "cd ${0} && chmod u+x ../scripts/generate-witness.sh && ../scripts/generate-witness.sh",
-        "prove:verify": "cd ${0} && chmod u+x ../scripts/prove-verify.sh && ../scripts/prove-verify.sh ${0}",
-        "test": "cd ${0} && nargo test",
-        "test:log": "cd ${0} && nargo test --show-output",
+        "compile": "cd circuits/${0} && chmod u+x ../../scripts/compile.sh && ../../scripts/compile.sh",
+        "generate:prover": "cd circuits/${0} && chmod u+x ../../scripts/generate-prover.sh && ../../scripts/generate-prover.sh",
+        "generate:witness": "cd circuits/${0} && chmod u+x ../../scripts/generate-witness.sh && ../../scripts/generate-witness.sh",
+        "prove:verify": "cd circuits/${0} && chmod u+x ../../scripts/prove-verify.sh && ../../scripts/prove-verify.sh ${0}",
+        "test": "cd circuits/${0} && nargo test",
+        "test:log": "cd circuits/${0} && nargo test --show-output",
         "prettier": "prettier -c .",
         "prettier:write": "prettier -w ."
     },
