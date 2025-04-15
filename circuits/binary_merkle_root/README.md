@@ -13,7 +13,7 @@ binary_merkle_root = { git = "https://github.com/vplasencia/noir-circuits", tag 
 
 ## Usage
 
-```rs
+```nr
 use std::hash::poseidon::bn254::hash_2 as poseidon2;
 use binary_merkle_root;
 
