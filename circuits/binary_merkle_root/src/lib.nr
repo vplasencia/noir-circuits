@@ -4,11 +4,13 @@ pub fn binary_merkle_root<let MAX_DEPTH: u32>(hasher: fn([Field; 2]) -> Field, l
 
     for i in 0..MAX_DEPTH {
         if i < depth {
-            if indices[i] == 1 {
-                node = hasher([siblings[i], node]);
+            let sibling = siblings[i];
+            let (left, right) = if indices[i] == 0 {
+                (node, sibling)
             } else {
-                node = hasher([node, siblings[i]]);
-            }
+                (sibling, node)
+            };
+            node = hasher([left, right]);
         }
     }
     
