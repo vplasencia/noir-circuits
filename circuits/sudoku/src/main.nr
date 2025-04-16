@@ -127,4 +127,3 @@ fn test_incorrect_sudoku_solution() {
     let result = main(unsolved, solved);
     assert(result == ());
 }
-
