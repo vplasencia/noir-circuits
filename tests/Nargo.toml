@@ -4,4 +4,4 @@ type = "lib"
 authors = [""]
 
 [dependencies]
-binary_merkle_root = { path = "../circuits/binary_merkle_root" }
+binary_merkle_root = { path = "../circuits/binary-merkle-root" }

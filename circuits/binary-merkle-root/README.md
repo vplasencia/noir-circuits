@@ -8,7 +8,7 @@ To import the library, add the lib to the `Nargo.toml` file. For example:
 
 ```toml
 [dependencies]
-binary_merkle_root = { git = "https://github.com/vplasencia/noir-circuits", tag = "main", directory = "circuits/binary_merkle_root" }
+binary_merkle_root = { git = "https://github.com/vplasencia/noir-circuits", tag = "main", directory = "circuits/binary-merkle-root" }
 ```
 
 ## Usage

@@ -54,7 +54,7 @@ To show test logs, run:
 yarn test:log <circuit-name>
 ```
 
-If the circuit is a library (e.g. binary_merkle_root), run:
+If the circuit is a library (e.g. binary-merkle-root), run:
 
 ```sh
 yarn test:libraries
