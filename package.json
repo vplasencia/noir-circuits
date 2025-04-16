@@ -11,9 +11,14 @@
         "test:libraries": "cd tests && nargo test",
         "test:libraries:log": "cd tests && nargo test --show-output",
         "prettier": "prettier -c .",
-        "prettier:write": "prettier -w ."
+        "prettier:write": "prettier -w .",
+        "version:bump": "NO_HOOK=1 git commit -am \"chore(${0}): v${1}\" && git tag ${0}-v${1}",
+        "version:release": "changelogithub"
     },
     "devDependencies": {
-        "prettier": "^3.5.3"
+        "@types/node": "^22.14.1",
+        "changelogithub": "^13.13.0",
+        "prettier": "^3.5.3",
+        "typescript": "^5.8.3"
     }
 }
