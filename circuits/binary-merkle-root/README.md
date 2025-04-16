@@ -15,7 +15,7 @@ binary_merkle_root = { git = "https://github.com/vplasencia/noir-circuits", tag 
 
 ```nr
 use std::hash::poseidon::bn254::hash_2 as poseidon2;
-use binary_merkle_root;
+use binary_merkle_root::binary_merkle_root;
 
 fn main(
     identity_commitment: Field,
@@ -25,7 +25,7 @@ fn main(
 ) {
 
     // Calculate Merkle root.
-    let merkle_root = binary_merkle_root::binary_merkle_root(poseidon2, identity_commitment, merkle_proof_length, merkle_proof_indices, merkle_proof_siblings);
+    let merkle_root = binary_merkle_root(poseidon2, identity_commitment, merkle_proof_length, merkle_proof_indices, merkle_proof_siblings);
 }
 ```
 

@@ -4,7 +4,7 @@ use ec::CurveTrait;
 use ec::scalar_field::ScalarField;
 use std::field::bn254::assert_lt;
 use std::hash::poseidon::bn254::hash_2 as poseidon2;
-use binary_merkle_root;
+use binary_merkle_root::binary_merkle_root;
 
 // Maximum depth of the Merkle Tree.
 pub global MAX_DEPTH: u32 = 10;
@@ -39,7 +39,7 @@ fn main(
     let identity_commitment = poseidon2([public_key.x, public_key.y]);
 
     // Calculate Merkle root.
-    let merkle_root = binary_merkle_root::binary_merkle_root(poseidon2, identity_commitment, merkle_proof_length, merkle_proof_indices, merkle_proof_siblings);
+    let merkle_root = binary_merkle_root(poseidon2, identity_commitment, merkle_proof_length, merkle_proof_indices, merkle_proof_siblings);
 
     // Nullifier generation.
     let nullifier = poseidon2([scope, secret]);

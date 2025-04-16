@@ -6,7 +6,7 @@ use std::field::bn254::assert_lt;
 use std::hash::poseidon::bn254::hash_1 as poseidon1;
 use std::hash::poseidon::bn254::hash_2 as poseidon2;
 use std::hash::poseidon::bn254::hash_3 as poseidon3;
-use binary_merkle_root;
+use binary_merkle_root::binary_merkle_root;
 
 // Maximum depth of the Merkle Tree.
 pub global MAX_DEPTH: u32 = 10;
@@ -45,7 +45,7 @@ fn main(
     let rate_commitment = poseidon2([identity_commitment, user_message_limit]);
     
     // Calculate Merkle root.
-    let merkle_root = binary_merkle_root::binary_merkle_root(poseidon2, rate_commitment, merkle_proof_length, merkle_proof_indices, merkle_proof_siblings);
+    let merkle_root = binary_merkle_root(poseidon2, rate_commitment, merkle_proof_length, merkle_proof_indices, merkle_proof_siblings);
 
     // message_id range check
     // Check 0 <= message_id < user_message_limit
