@@ -15,11 +15,7 @@ global BASE8: [Field; 2] = [
 // This is a 251 bit value.
 global L: Field = 2736030358979909402780800718157159386076813972158567259200215660948447373041;
 
-fn main(
-    secret: Field,
-    scope: pub Field,
-) -> pub Field {
-
+fn main(secret: Field, scope: pub Field) -> pub Field {
     // Ensure secret < l.
     assert_lt(secret, L);
 
@@ -39,14 +35,9 @@ fn generate_commitment_correctly() {
     let secret = 1108309587400101993411102416244214863407236426086075003887302581916280632942;
     let scope = 32;
 
-    let result = main(
-        secret,
-        scope
-    );
+    let result = main(secret, scope);
 
     let commitment = 1280033553760815678764770846139155613435155939625621669696967390845036381755;
 
-    assert(
-        result == commitment
-    );
+    assert(result == commitment);
 }

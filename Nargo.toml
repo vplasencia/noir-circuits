@@ -1,0 +1,2 @@
+[workspace]
+members = ["circuits/binary-merkle-root", "circuits/identity-proof", "circuits/rln", "circuits/semaphore", "circuits/sudoku", "tests"]

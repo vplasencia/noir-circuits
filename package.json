@@ -13,7 +13,9 @@
         "prettier": "prettier -c .",
         "prettier:write": "prettier -w .",
         "version:tag": "git tag ${0}-v${1}",
-        "version:release": "changelogithub"
+        "version:release": "changelogithub",
+        "check": "yarn prettier && nargo fmt --check",
+        "format": "yarn prettier:write && nargo fmt"
     },
     "devDependencies": {
         "@types/node": "^22.14.1",

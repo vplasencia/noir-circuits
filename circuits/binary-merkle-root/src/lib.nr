@@ -1,5 +1,10 @@
-pub fn binary_merkle_root<let MAX_DEPTH: u32>(hasher: fn([Field; 2]) -> Field, leaf: Field, depth: u32, indices: [u1; MAX_DEPTH], siblings: [Field; MAX_DEPTH]) -> Field {
-    
+pub fn binary_merkle_root<let MAX_DEPTH: u32>(
+    hasher: fn([Field; 2]) -> Field,
+    leaf: Field,
+    depth: u32,
+    indices: [u1; MAX_DEPTH],
+    siblings: [Field; MAX_DEPTH],
+) -> Field {
     let mut node = leaf;
 
     for i in 0..MAX_DEPTH {
@@ -13,6 +18,6 @@ pub fn binary_merkle_root<let MAX_DEPTH: u32>(hasher: fn([Field; 2]) -> Field, l
             node = hasher([left, right]);
         }
     }
-    
+
     node
 }

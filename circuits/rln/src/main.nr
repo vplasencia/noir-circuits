@@ -1,3 +1,4 @@
+use binary_merkle_root::binary_merkle_root;
 use ec::bjj::BabyJubJubParams;
 use ec::Curve;
 use ec::CurveTrait;
@@ -6,7 +7,6 @@ use std::field::bn254::assert_lt;
 use std::hash::poseidon::bn254::hash_1 as poseidon1;
 use std::hash::poseidon::bn254::hash_2 as poseidon2;
 use std::hash::poseidon::bn254::hash_3 as poseidon3;
-use binary_merkle_root::binary_merkle_root;
 
 // Maximum depth of the Merkle Tree.
 pub global MAX_DEPTH: u32 = 10;
@@ -31,7 +31,6 @@ fn main(
     x: pub Field,
     scope: pub Field,
 ) -> pub (Field, Field, Field) {
-
     // Ensure secret_key < l.
     assert_lt(secret, L);
 
@@ -43,9 +42,15 @@ fn main(
     let identity_commitment = poseidon2([public_key.x, public_key.y]);
 
     let rate_commitment = poseidon2([identity_commitment, user_message_limit]);
-    
+
     // Calculate Merkle root.
-    let merkle_root = binary_merkle_root(poseidon2, rate_commitment, merkle_proof_length, merkle_proof_indices, merkle_proof_siblings);
+    let merkle_root = binary_merkle_root(
+        poseidon2,
+        rate_commitment,
+        merkle_proof_length,
+        merkle_proof_indices,
+        merkle_proof_siblings,
+    );
 
     // message_id range check
     // Check 0 <= message_id < user_message_limit
@@ -57,7 +62,7 @@ fn main(
 
     // Nullifier generation.
     let nullifier = poseidon1([a1]);
-    
+
     // Output the share, the root and nullifier.
     (y, merkle_root, nullifier)
 }
@@ -79,7 +84,7 @@ fn generate_y_root_and_nullifier_correctly() {
         0,
         0,
         0,
-        0
+        0,
     ];
     let x = 43;
     let scope = 32;
@@ -92,24 +97,18 @@ fn generate_y_root_and_nullifier_correctly() {
         merkle_proof_indices,
         merkle_proof_siblings,
         x,
-        scope
+        scope,
     );
 
     let y = 12356619821810267986120622666785209285739122412569198725630324999782018871706;
 
     let merkle_root = 17736010522294375663307090433221275727020267308874050802044216648097163850037;
-    
+
     let nullifier = 13869151267035736519231303184089643059570149775620938672447437357619974636612;
 
-    assert(
-        result.0 == y
-    );
+    assert(result.0 == y);
 
-    assert(
-        result.1 == merkle_root
-    );
+    assert(result.1 == merkle_root);
 
-    assert(
-        result.2 == nullifier
-    );
+    assert(result.2 == nullifier);
 }
