@@ -14,8 +14,8 @@ binary_merkle_root = { git = "https://github.com/vplasencia/noir-circuits", tag 
 ## Usage
 
 ```nr
-use std::hash::poseidon::bn254::hash_2 as poseidon2;
 use binary_merkle_root::binary_merkle_root;
+use std::hash::poseidon::bn254::hash_2 as poseidon2;
 
 fn main(
     identity_commitment: Field,
