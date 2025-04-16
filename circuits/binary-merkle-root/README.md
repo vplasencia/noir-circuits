@@ -8,10 +8,10 @@ To import the library, add the lib to the `Nargo.toml` file. For example:
 
 ```toml
 [dependencies]
-binary_merkle_root = { git = "https://github.com/vplasencia/noir-circuits", tag = "binary-merkle-tree-v0.0.1", directory = "circuits/binary-merkle-root" }
+binary_merkle_root = { git = "https://github.com/vplasencia/noir-circuits", tag = "binary-merkle-root-v0.0.1", directory = "circuits/binary-merkle-root" }
 ```
 
-You can find all released versions of the `binary-merkle-root` circuit at the following link: https://github.com/vplasencia/noir-circuits/releases?q=binary-merkle-tree&expanded=true
+You can find all released versions of the `binary-merkle-root` circuit at the following link: https://github.com/vplasencia/noir-circuits/releases?q=binary-merkle-root&expanded=true
 
 ## Usage
 
