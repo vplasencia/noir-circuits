@@ -12,7 +12,7 @@
         "test:libraries:log": "cd tests && nargo test --show-output",
         "prettier": "prettier -c .",
         "prettier:write": "prettier -w .",
-        "version:bump": "git tag ${0}-v${1}",
+        "version:tag": "git tag ${0}-v${1}",
         "version:release": "changelogithub"
     },
     "devDependencies": {
