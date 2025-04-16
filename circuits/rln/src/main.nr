@@ -68,7 +68,7 @@ fn main(
 }
 
 #[test]
-fn generate_y_root_and_nullifier_correctly() {
+fn test_generate_y_root_and_nullifier() {
     let secret = 1108309587400101993411102416244214863407236426086075003887302581916280632942;
     let user_message_limit = 3;
     let message_id = 1;

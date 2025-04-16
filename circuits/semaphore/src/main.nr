@@ -54,7 +54,7 @@ fn main(
 }
 
 #[test]
-fn generate_root_and_nullifier_correctly() {
+fn test_generate_root_and_nullifier() {
     let secret = 1108309587400101993411102416244214863407236426086075003887302581916280632942;
     let merkle_proof_indices = [1, 1, 0, 0, 0, 0, 0, 0, 0, 0];
     let merkle_proof_length = 2;

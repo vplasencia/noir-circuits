@@ -31,7 +31,7 @@ fn main(secret: Field, scope: pub Field) -> pub Field {
 }
 
 #[test]
-fn generate_commitment_correctly() {
+fn test_generate_commitment() {
     let secret = 1108309587400101993411102416244214863407236426086075003887302581916280632942;
     let scope = 32;
 

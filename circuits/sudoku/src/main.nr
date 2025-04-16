@@ -69,7 +69,7 @@ fn main(unsolved: pub [[Field; 9]; 9], solved: [[Field; 9]; 9]) {
 }
 
 #[test]
-fn correct_sudoku_solution() {
+fn test_correct_sudoku_solution() {
     let unsolved = [
         [0, 0, 0, 0, 0, 6, 0, 0, 0],
         [0, 0, 7, 2, 0, 0, 8, 0, 0],
@@ -98,7 +98,7 @@ fn correct_sudoku_solution() {
 }
 
 #[test(should_fail)]
-fn incorrect_sudoku_solution() {
+fn test_incorrect_sudoku_solution() {
     let unsolved = [
         [0, 0, 0, 0, 0, 6, 0, 0, 0],
         [0, 0, 7, 2, 0, 0, 8, 0, 0],
