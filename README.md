@@ -68,16 +68,16 @@ yarn test:libraries:log
 
 ## Code formatting
 
-Run [Prettier](https://prettier.io/) to check formatting rules:
+Run [Prettier](https://prettier.io/) and [nargo fmt](https://noir-lang.org/docs/dev/reference/nargo_commands#nargo-fmt) to check formatting rules:
 
 ```bash
-yarn prettier
+yarn check
 ```
 
 Or to automatically format the code:
 
 ```bash
-yarn prettier:write
+yarn format
 ```
 
 ## Releases
